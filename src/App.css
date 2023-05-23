@@ -28,6 +28,7 @@ padding: 0;
     align-items: center;
     justify-content: space-between;
     min-height: 61px;
+    z-index: 100;
   }
 .ul-nav{
   display: flex;
@@ -375,7 +376,246 @@ grid-template-columns: 1fr 1fr;
 }}}
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;200&display=swap');
+
+/* Beneficios */
+
+/* benefits */
+.beneficios{
+  padding-bottom: 70px;
+}
+
+.divTitulo{
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo{
+  line-height: 1.35em;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+.tarjetas{
+  /* width: 100%; */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+
+  padding-left: 50px; 
+}
+
+/* tarjeta */
+.divTarjeta{
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-right: 100px;
+}
+
+.tituloTarjeta{
+  font-family: 'Poppins', sans-serif;
+  color: #A26028;
   
+
+  font-size: 22px;
+  line-height: 1.41em;
+
+  text-align: center;
+}
+
+.divTituloTarjeta{
+  width: 170px;
+}
+
+
+.divDescripcion{
+  height: auto;
+  width: 232px;
+  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.descripcion{
+  font-family: 'ExtraLight', sans-serif;
+  
+  color: rgb(135,135,135);
+
+  line-height: 1.7em;
+
+  background: transparent;
+  font-size: 15px;
+}
+
+/* Lineas */
+
+/* lineas */
+.lineas{
+  background-color: rgb(239,239,239)
+}
+
+.tituloLineas{
+  line-height: 1.35em;
+  text-align: center;
+  font-size: 30px;
+  /* font-weight: bold; */
+
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+
+  padding: 80px 0px 10px;
+}
+
+.lineasImagen {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  gap: 50px;
+}
+
+/* linea */
+.imagenLinea{
+  width: 450px;
+  height: 726px;
+  
+  background-size: cover; /* Ajusta la imagen al tamaño del div sin distorsionarla */
+  background-position: center; /* Centra la imagen en el div */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  z-index: 1;
+
+}
+
+.text-overlay {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.descLinea{
+  text-decoration: underline;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-size: 22px;
+  letter-spacing: normal;
+  cursor: pointer;
+  line-height: 1.41em;
+  color: white;
+
+  font-weight: bold;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* boton */
+.divBoton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px 80px;
+}
+.boton{
+  font-family: 'ExtraLight', sans-serif;
+
+  background-color: rgb(30,30,30);
+  color: rgb(218, 217, 217);
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+
+  /* font-size: 1.1rem; */
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: rgb(162,96,40);
+}
+
+/* Testimonios */
+
+/* testimonios */
+.divTestimonio{
+  background-color: rgb(245,245,245);
+}
+
+.divDescTestimonio{
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  gap: 150px;
+}
+
+/* testimonio */
+.testimonio{
+  text-align: center;
+  /* width: 200px; */
+  
+  /* display: flex; */
+  /* flex-direction: column; */
+
+  position: static;
+  display: grid;
+  height: auto;
+  width: 220px;
+  min-height: 481px;
+  grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-columns: 100%;
+}
+
+.comillaTestimonio{
+  height: 30px;
+}
+
+.descTestimonio{
+  line-height: 1.88em;
+  text-align: center;
+  font-size: 15px;
+
+  color:rgb(149,149,149);
+  font-family: 'ExtraLight', sans-serif;
+
+  padding-top: 40px;
+}
+
+.nombreTestimonio{
+  font-family: 'Poppins', sans-serif;
+  color: rgb(162,96,40);
+  font-weight: bold;
+  background: transparents;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
 
 
 
