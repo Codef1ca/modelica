@@ -5,7 +5,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 const Boton = () => {
     return (
         <div className='divBoton'>
-            <Link className='boton'>Todos los productos</Link>
+            <Link className='boton' to={"/servicios"}>Todos los productos</Link>
         </div>
     );
 };
