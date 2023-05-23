@@ -1,9 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
 
 const Boton = () => {
     return (
         <div className='divBoton'>
-            <button className='boton'>Todos los productos</button>
+            <Link className='boton'>Todos los productos</Link>
         </div>
     );
 };

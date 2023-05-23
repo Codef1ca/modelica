@@ -1,27 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Acercade from './Routes/Acercade';
-import Home from './Routes/Home';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Acercade from "./Routes/Acercade";
+import Home from "./Routes/Home";
+import Servicios from "./Routes/Servicios";
 
 const router = createBrowserRouter([
   {
-  path:'/',
-  element: <Home/>
+    path: "/",
+    element: <Home />,
   },
   {
-    path:'/acercade',
-    element: <Acercade/>
+    path: "/acercade",
+    element: <Acercade />,
+  },
+  {
+    path: "/servicios",
+    element: <Servicios />,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}>
-    <App />
+      <App />
     </RouterProvider>
   </React.StrictMode>
 );

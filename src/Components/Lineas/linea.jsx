@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 const Linea = ({url, texto}) => {
     /* const estilo = {backgroundImage: \'{url}\'} */
@@ -15,7 +16,7 @@ const Linea = ({url, texto}) => {
 
     return (
         <div style={{ backgroundImage: `url(${url})`}} className='imagenLinea'>
-            <div className='text-overlay'><a className='descLinea' href='./Servicios'>{texto}</a></div>
+            <div className='text-overlay'><Link className='descLinea' to='/Servicios'>{texto}</Link></div>
             
         </div>
     );

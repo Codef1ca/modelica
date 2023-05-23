@@ -547,6 +547,8 @@ grid-template-columns: 1fr 1fr;
   padding: 10px;
   border: none;
   border-radius: 0;
+  text-decoration: none;
+  
 
   /* font-size: 1.1rem; */
   cursor: pointer;
