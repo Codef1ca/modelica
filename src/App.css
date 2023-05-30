@@ -753,3 +753,15 @@ grid-template-columns: 1fr 1fr;
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+
+/* Media Querys */
+
+@media screen and (max-width: 1300px) {
+  .tarjetas {
+    flex-wrap: wrap; /* envuelve los elementos en varias filas */
+  }
+  
+/*   .elemento {
+    width: calc(50% - 20px); /* divide el ancho en 2 filas y ajusta los márgenes 
+  } */
+}
