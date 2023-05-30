@@ -4,7 +4,8 @@ import Hero from '../Components/Hero'
 import Benefits from "../Components/Beneficios/benefits";
 import Lineas from "../Components/Lineas/lineas";
 import Testimonios from "../Components/Testimonios/testimonios";
-
+import Footer from '../Components/Footer';
+import FormContacto from '../Components/FormContacto';
 const Home = () => {
 
   useEffect(() => {
@@ -18,8 +19,9 @@ const Home = () => {
         <Hero/>
         <Benefits/>
         <Lineas/>
+        <FormContacto/>
         <Testimonios/>
-        
+        <Footer/>
     </div>
   )
 }
