@@ -10,6 +10,7 @@
 
 body{
   background-color: var(--color-body);
+  margin: 0;
 }
 
 /* *{
@@ -410,11 +411,17 @@ grid-template-columns: 1fr 1fr;
   display: flex;
   justify-content: center;
 
-  padding-left: 50px; 
+  /* padding-left: 50px;  */
+
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  
 }
 
 /* tarjeta */
 .divTarjeta{
+  
   height: 100%;
 
   display: flex;
@@ -422,7 +429,7 @@ grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
 
-  padding-right: 100px;
+  /* padding-right: 100px; */
 }
 
 .tituloTarjeta{
@@ -687,6 +694,7 @@ grid-template-columns: 1fr 1fr;
 /* LinkWPP */
 .divLinkWPP{
   width:auto;
+  /* width:100%; */
   height: 200px;
   background-color: #1E1E1E;
 
@@ -697,6 +705,7 @@ grid-template-columns: 1fr 1fr;
   position: relative;
   align-items: center;
   justify-content: center;
+
 }
 
 .divTituloLinkWPP{
@@ -776,6 +785,7 @@ grid-template-columns: 1fr 1fr;
   } */
 }
 
+
 @media screen and (max-width: 720px) {
   .tarjetas {
     flex-wrap: wrap; /* envuelve los elementos en varias filas */
@@ -798,6 +808,8 @@ grid-template-columns: 1fr 1fr;
   .testimonio{
     width: 80%; /* establece el ancho al 100% para que los elementos se muestren en una columna */
     height: 50%;
+
+    padding-bottom: 80px;
   }
 
   .imagenLinea{
@@ -825,6 +837,34 @@ grid-template-columns: 1fr 1fr;
 @media screen and (max-width: 690px) {
   .divLineasProductos{
     margin-top: 30%;
+  }
+
+  .divTituloLinkWPP{
+    /* text-align: center; */
+    width: 300px;
+  }
+
+  .tituloLinkWPP{
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .descLinea{
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (max-width: 280px) {
+  .tarjetas{
+    align-items: center;
+  }
+  .divTarjeta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 }
