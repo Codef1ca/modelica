@@ -157,6 +157,89 @@ grid-template-columns: 1fr 1fr;
  
 }
 
+/* acerca de */
+.cont-img-acerca{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 700px;
+  background-image: url(./Assets/laura-cleffmann-z3drmcczVTc-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;   
+  margin-bottom: 80px;   
+}
+
+.container-acerca{
+  margin-top: 150px;
+}
+
+.cont-txt-acerca{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.parrafo-acerca{
+  padding: 40px 200px 70px 200px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 350;
+  color: var(--color-secundario);
+}
+
+.caja2,.caja4,.caja5,.caja7{
+  background-color: #d8d8d7 ;
+}
+
+.caja1{
+  background-image: url(./Assets/james-kovin-YQGPSblLPz0-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caja3{
+  background-image: url(./Assets/krakenimages-376KN_ISplE-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -50px;
+}
+
+.caja6{
+  background-image: url(./Assets/spencer-davis-SVfXlChg9HI-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caja8{
+  background-image: url(./Assets/spencer-davis-QTKwYmMumfk-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h-caja {
+  padding: 60px 60px 30px 60px;
+}
+
+.p-caja{
+  padding: 10px 60px 30px 60px;
+  color: var(--color-secundario);
+}
+
+.grid-fotos{
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr  ;
+  width: 100%;
+  min-height: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
 /* mediaq */ 
 @media (max-width: 1300px) {
   .navbar-links-container a {
