@@ -1002,14 +1002,14 @@ grid-template-columns: 1fr 1fr;
 
 /* --------------- Formcontacto --------------- */
 
-.containerForm {
+.containerContactForm {
   background-color: #1e1e1e;
   color: white;
   padding: 20px;
   /* font-family: "ExtraLight", sans-serif; */
 }
 
-.content {
+.contentContactForm {
   display: flex;
   justify-content: space-between;
 }
