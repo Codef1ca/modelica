@@ -2,22 +2,6 @@ import "./../App.css";
 import { useState } from "react";
 
 const FormContacto = () => {
-
-  const keys = {nombre: "", asjdlads: ""}
-  const [Nombre, setNombre] = useState(keys)
-  const updateInput = (event)  => {
-    
-    setNombre(event.target.value)
-    console.log(event.target.value)
-    return 1
-  } 
-
-  const cambiarNombre = (event)  => {
-    setNombre(event.target.value)
-    console.log(event.target.value)
-    return 1
-  } 
-  
   return (
     <div class="containerForm">
       <div class="content">
@@ -52,8 +36,8 @@ const FormContacto = () => {
                   type="text"
                   id="nombre"
                   name="nombre"
-                  value={Nombre}
-                  onChange={cambiarNombre}
+                  // value={Nombre}
+                  // onChange={cambiarNombre}
                 />
               </div>
               <div class="form-group">
