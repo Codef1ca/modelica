@@ -1,5 +1,7 @@
 import "./../App.css";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const FormContacto = () => {
   const [nombre, setNombre] = useState("");
@@ -9,8 +11,53 @@ const FormContacto = () => {
   const [direccion, setDireccion] = useState("");
   const [asunto, setAsunto] = useState("");
   const [mensaje, setMensaje] = useState("");
-  
-  
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_xy25uef",
+        "template_g5aic4j",
+        form.current,
+        "9i2UOEfdwm6w4xyOF"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Crear un objeto para almacenar los datos capturados
+    const formData = {
+      nombre,
+      apellido,
+      email,
+      telefono,
+      direccion,
+      asunto,
+      mensaje,
+    };
+    console.log("Datos capturados:", formData);
+
+    //restablecemos a "" todos los inputs
+    setNombre("");
+    setApellido("");
+    setEmail("");
+    setTelefono("");
+    setDireccion("");
+    setAsunto("");
+    setMensaje("");
+  };
+
   return (
     <div class="containerContactForm">
       <div class="contentContactForm">
@@ -34,7 +81,7 @@ const FormContacto = () => {
         </div>
 
         <div class="right-content">
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <div class="form-row">
               <div class="form-group">
                 <label className="formLabels" for="nombre">
@@ -45,8 +92,8 @@ const FormContacto = () => {
                   type="text"
                   id="nombre"
                   name="nombre"
-                  // value={Nombre}
-                  // onChange={cambiarNombre}
+                  value={nombre}
+                  onChange={(e) => setNombre(e.target.value)}
                 />
               </div>
               <div class="form-group">
@@ -58,6 +105,8 @@ const FormContacto = () => {
                   type="text"
                   id="apellido"
                   name="apellido"
+                  value={apellido}
+                  onChange={(e) => setApellido(e.target.value)}
                 />
               </div>
             </div>
@@ -65,7 +114,15 @@ const FormContacto = () => {
             <label className="formLabels" for="email">
               Email
             </label>
-            <input className="inputForm" type="email" id="email" name="email" />
+            <input
+              className="inputForm"
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
             <label className="formLabels" for="telefono">
               Teléfono
             </label>
@@ -74,6 +131,8 @@ const FormContacto = () => {
               type="tel"
               id="telefono"
               name="telefono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
             />
             <label className="formLabels" for="direccion">
               Dirección
@@ -83,6 +142,8 @@ const FormContacto = () => {
               type="text"
               id="direccion"
               name="direccion"
+              value={direccion}
+              onChange={(e) => setDireccion(e.target.value)}
             />
             <label className="formLabels" for="asunto">
               Asunto
@@ -92,6 +153,8 @@ const FormContacto = () => {
               type="text"
               id="asunto"
               name="asunto"
+              value={asunto}
+              onChange={(e) => setAsunto(e.target.value)}
             />
             <label className="formLabels" for="mensaje">
               Escribe tu mensaje aquí...
@@ -101,6 +164,8 @@ const FormContacto = () => {
               name="mensaje"
               id="mensaje"
               rows="4"
+              value={mensaje}
+              onChange={(e) => setMensaje(e.target.value)}
             ></textarea>
             <button className="formButtonSubmit" type="submit">
               Enviar
