@@ -2,18 +2,38 @@ import "./../App.css";
 import React, { useState } from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { json } from "react-router-dom";
 
 const FormContacto = () => {
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [direccion, setDireccion] = useState("");
-  const [asunto, setAsunto] = useState("");
-  const [mensaje, setMensaje] = useState("");
+  // const [nombre, setNombre] = useState("");
+  // const [apellido, setApellido] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [telefono, setTelefono] = useState("");
+  // const [direccion, setDireccion] = useState("");
+  // const [asunto, setAsunto] = useState("");
+  // const [mensaje, setMensaje] = useState("");
+
+  const formData = {
+    nombre: undefined,
+    apellido: undefined,
+    email: undefined,
+    telefono: undefined,
+    direccion: undefined,
+    asunto: undefined,
+    mensaje: undefined,
+  };
+
+  const [formValue, setFormValue] = useState(formData);
+
+  function handleChange(event) {
+    const input = event.target;
+    const thisCampo = input.id;
+    const prevFormData = { ...formValue };
+    prevFormData[thisCampo] = input.value;
+    setFormValue(prevFormData);
+  }
 
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -34,32 +54,35 @@ const FormContacto = () => {
       );
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Crear un objeto para almacenar los datos capturados
-    const formData = {
-      nombre,
-      apellido,
-      email,
-      telefono,
-      direccion,
-      asunto,
-      mensaje,
-    };
-    console.log("Datos capturados:", formData);
+  // El siguiente código lo deja en un JSON
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   // Crear un objeto para almacenar los datos capturados
+  //   const formData = {
+  //     nombre,
+  //     apellido,
+  //     email,
+  //     telefono,
+  //     direccion,
+  //     asunto,
+  //     mensaje,
+  //   };
+  //   console.log("Datos capturados:", formData);
 
-    //restablecemos a "" todos los inputs
-    setNombre("");
-    setApellido("");
-    setEmail("");
-    setTelefono("");
-    setDireccion("");
-    setAsunto("");
-    setMensaje("");
-  };
+  //   //restablecemos a "" todos los inputs
+  //   setNombre("");
+  //   setApellido("");
+  //   setEmail("");
+  //   setTelefono("");
+  //   setDireccion("");
+  //   setAsunto("");
+  //   setMensaje("");
+  // };
 
   return (
     <div class="containerContactForm">
+      <div>{JSON.stringify(formValue)}</div>
+
       <div class="contentContactForm">
         <div class="left-content">
           <div className="h1Form">
@@ -81,7 +104,8 @@ const FormContacto = () => {
         </div>
 
         <div class="right-content">
-          <form ref={form} onSubmit={sendEmail}>
+          <form ref={form} onSubmit={sendEmail} >
+          {/* <form> */}
             <div class="form-row">
               <div class="form-group">
                 <label className="formLabels" for="nombre">
@@ -91,9 +115,9 @@ const FormContacto = () => {
                   className="inputForm"
                   type="text"
                   id="nombre"
-                  name="nombre"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
+                  name="from_name"
+                  // value={nombre}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group">
@@ -105,8 +129,8 @@ const FormContacto = () => {
                   type="text"
                   id="apellido"
                   name="apellido"
-                  value={apellido}
-                  onChange={(e) => setApellido(e.target.value)}
+                  // value={apellido}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -118,9 +142,9 @@ const FormContacto = () => {
               className="inputForm"
               type="email"
               id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="to_name"
+              // value={email}
+              onChange={handleChange}
             />
 
             <label className="formLabels" for="telefono">
@@ -131,8 +155,8 @@ const FormContacto = () => {
               type="tel"
               id="telefono"
               name="telefono"
-              value={telefono}
-              onChange={(e) => setTelefono(e.target.value)}
+              // value={telefono}
+              onChange={handleChange}
             />
             <label className="formLabels" for="direccion">
               Dirección
@@ -142,8 +166,8 @@ const FormContacto = () => {
               type="text"
               id="direccion"
               name="direccion"
-              value={direccion}
-              onChange={(e) => setDireccion(e.target.value)}
+              // value={direccion}
+              onChange={handleChange}
             />
             <label className="formLabels" for="asunto">
               Asunto
@@ -153,19 +177,19 @@ const FormContacto = () => {
               type="text"
               id="asunto"
               name="asunto"
-              value={asunto}
-              onChange={(e) => setAsunto(e.target.value)}
+              // value={asunto}
+              onChange={handleChange}
             />
             <label className="formLabels" for="mensaje">
               Escribe tu mensaje aquí...
             </label>
             <textarea
               className="formTextArea"
-              name="mensaje"
+              name="message"
               id="mensaje"
               rows="4"
-              value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
+              // value={mensaje}
+              onChange={handleChange}
             ></textarea>
             <button className="formButtonSubmit" type="submit">
               Enviar
