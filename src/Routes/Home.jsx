@@ -6,6 +6,7 @@ import Lineas from "../Components/Lineas/lineas";
 import Testimonios from "../Components/Testimonios/testimonios";
 import Footer from '../Components/Footer';
 import FormContacto from '../Components/FormContacto';
+import ButtonFixedWpp from '../Components/ButtonFixedWpp';
 const Home = () => {
 
   useEffect(() => {
@@ -17,6 +18,7 @@ const Home = () => {
     <div>
         <Navbar/>
         <Hero/>
+        <ButtonFixedWpp />
         <Benefits/>
         <Lineas/>
         <FormContacto/>

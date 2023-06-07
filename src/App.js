@@ -5,7 +5,6 @@ import Hero from "./Components/Hero";
 import Acercade from "./Routes/Acercade";
 import Home from "./Routes/Home";
 import Footer from "./Components/Footer";
-import ButtonFixedWpp from "./Components/buttonFixedWpp";
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <Navbar />
       <Home />
       <Acercade />
-      <ButtonFixedWpp />
       <Footer />
     </div>
   );
