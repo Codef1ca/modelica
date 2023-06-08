@@ -1118,7 +1118,7 @@ form button {
   margin-top: 100px;
 }
 
-/*Componentes Nacho*/
+/* Componentes Nacho */
 /* buttonFixedWpp.jsx: */
 .floating-button {
   position: fixed;
@@ -1144,21 +1144,30 @@ form button {
   0% {
     transform: translateX(0);
   }
-  25% {
+  .83% {
     transform: translateX(-5px) rotate(-5deg);
   }
-  50% {
+  1.66% {
     transform: translateX(5px) rotate(5deg);
   }
-  75% {
+  2.5% {
     transform: translateX(-5px) rotate(-5deg);
   }
-  100% {
+  3.33% {
     transform: translateX(0);
   }
+  100%{
+
+  }
+
 }
 
-.floating-button.shake {
-  animation: shake 0.5s infinite;
+.shake {
+  animation: shake 30s ease-in-out infinite;
 }
+
+
+
+
+
 /* Termina buttonFixedWpp.jsx */
