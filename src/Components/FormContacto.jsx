@@ -4,7 +4,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { json } from "react-router-dom";
 
-const FormContacto = () => {
+const FormContacto = ({estilo}) => {
   const formData = {
     nombre: undefined,
     apellido: undefined,
@@ -14,6 +14,15 @@ const FormContacto = () => {
     asunto: undefined,
     mensaje: undefined,
   };
+  
+  let estiloForm;
+  if (estilo == "blanco") {
+    estiloForm = "containerContactFormBlanco";
+  } 
+  else{
+    estiloForm = "containerContactFormNegro";
+  }
+
 
   const [formValue, setFormValue] = useState(formData);
 
@@ -76,7 +85,7 @@ const FormContacto = () => {
   // };
 
   return (
-    <div class="containerContactForm">
+    <div class={estiloForm}>
       {/* <div>{JSON.stringify(formValue)}</div> */}
 
       <div class="contentContactForm">

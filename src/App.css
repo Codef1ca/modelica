@@ -956,7 +956,7 @@ grid-template-columns: 1fr 1fr;
 /* Componentes Nacho */
 
 
-.container {
+.containerFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1002,12 +1002,20 @@ grid-template-columns: 1fr 1fr;
 
 /* --------------- Formcontacto --------------- */
 
-.containerContactForm {
+.containerContactFormNegro {
   background-color: #1e1e1e;
   color: white;
   padding: 20px;
   /* font-family: "ExtraLight", sans-serif; */
 }
+
+.containerContactFormBlanco {
+  background-color: white;
+  color: #1e1e1e;
+  padding: 20px;
+  /* font-family: "ExtraLight", sans-serif; */
+}
+
 
 .contentContactForm {
   display: flex;
