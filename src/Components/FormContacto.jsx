@@ -5,14 +5,6 @@ import emailjs from "@emailjs/browser";
 import { json } from "react-router-dom";
 
 const FormContacto = () => {
-  // const [nombre, setNombre] = useState("");
-  // const [apellido, setApellido] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [telefono, setTelefono] = useState("");
-  // const [direccion, setDireccion] = useState("");
-  // const [asunto, setAsunto] = useState("");
-  // const [mensaje, setMensaje] = useState("");
-
   const formData = {
     nombre: undefined,
     apellido: undefined,
@@ -33,28 +25,41 @@ const FormContacto = () => {
     setFormValue(prevFormData);
   }
 
+  //EmailJS:
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_xy25uef",
-        "template_g5aic4j",
+        process.env.REACT_APP_EMAILJS_SERVICE,
+        process.env.REACT_APP_EMAILJS_TEMPLATE,
         form.current,
-        "9i2UOEfdwm6w4xyOF"
+        process.env.REACT_APP_EMAILJS_PUBLICKEY
       )
       .then(
         (result) => {
           console.log(result.text);
+          // Restablecer los valores de los inputs a ""
+          const formInputs = form.current.elements;
+          for (let i = 0; i < formInputs.length; i++) {
+            if (
+              formInputs[i].nodeName === "INPUT" ||
+              formInputs[i].nodeName === "TEXTAREA"
+            ) {
+              formInputs[i].value = "";
+            }
+          }
         },
         (error) => {
           console.log(error.text);
         }
       );
+    //restablecemos a "" ek los inputs
+    setFormValue(formData);
   };
 
-  // El siguiente código lo deja en un JSON
+  // Aux: El siguiente código lo deja en un JSON
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   // Crear un objeto para almacenar los datos capturados
@@ -68,20 +73,11 @@ const FormContacto = () => {
   //     mensaje,
   //   };
   //   console.log("Datos capturados:", formData);
-
-  //   //restablecemos a "" todos los inputs
-  //   setNombre("");
-  //   setApellido("");
-  //   setEmail("");
-  //   setTelefono("");
-  //   setDireccion("");
-  //   setAsunto("");
-  //   setMensaje("");
   // };
 
   return (
     <div class="containerContactForm">
-      <div>{JSON.stringify(formValue)}</div>
+      {/* <div>{JSON.stringify(formValue)}</div> */}
 
       <div class="contentContactForm">
         <div class="left-content">
@@ -104,8 +100,7 @@ const FormContacto = () => {
         </div>
 
         <div class="right-content">
-          <form ref={form} onSubmit={sendEmail} >
-          {/* <form> */}
+          <form ref={form} onSubmit={sendEmail}>
             <div class="form-row">
               <div class="form-group">
                 <label className="formLabels" for="nombre">
@@ -115,8 +110,7 @@ const FormContacto = () => {
                   className="inputForm"
                   type="text"
                   id="nombre"
-                  name="from_name"
-                  // value={nombre}
+                  name="nombre"
                   onChange={handleChange}
                 />
               </div>
@@ -129,7 +123,6 @@ const FormContacto = () => {
                   type="text"
                   id="apellido"
                   name="apellido"
-                  // value={apellido}
                   onChange={handleChange}
                 />
               </div>
@@ -142,8 +135,7 @@ const FormContacto = () => {
               className="inputForm"
               type="email"
               id="email"
-              name="to_name"
-              // value={email}
+              name="email"
               onChange={handleChange}
             />
 
@@ -155,9 +147,9 @@ const FormContacto = () => {
               type="tel"
               id="telefono"
               name="telefono"
-              // value={telefono}
               onChange={handleChange}
             />
+
             <label className="formLabels" for="direccion">
               Dirección
             </label>
@@ -166,9 +158,9 @@ const FormContacto = () => {
               type="text"
               id="direccion"
               name="direccion"
-              // value={direccion}
               onChange={handleChange}
             />
+
             <label className="formLabels" for="asunto">
               Asunto
             </label>
@@ -177,20 +169,20 @@ const FormContacto = () => {
               type="text"
               id="asunto"
               name="asunto"
-              // value={asunto}
               onChange={handleChange}
             />
+
             <label className="formLabels" for="mensaje">
               Escribe tu mensaje aquí...
             </label>
             <textarea
               className="formTextArea"
-              name="message"
               id="mensaje"
+              name="mensaje"
               rows="4"
-              // value={mensaje}
               onChange={handleChange}
             ></textarea>
+
             <button className="formButtonSubmit" type="submit">
               Enviar
             </button>
