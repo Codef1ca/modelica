@@ -10,6 +10,11 @@ const Map = () => {
   });
 
   //-24.81915816428887, -65.4284392754407
+  const centerMap = useMemo(
+    () => ({ lat: -24.80915816428887, lng: -65.4284392754407 }),
+    []
+  );
+
   const center = useMemo(
     () => ({ lat: -24.81915816428887, lng: -65.4284392754407 }),
     []
@@ -23,14 +28,16 @@ const Map = () => {
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <GoogleMap
-      zoom={14}
-      center={center}
-      mapContainerClassName="map-container"
-      mapTypeId="roadmap"
-    >
-      <MarkerF position={center} key="Prueba" />
-    </GoogleMap>
+    <div className="divMapa">
+      <GoogleMap
+        zoom={14}
+        center={centerMap}
+        mapContainerClassName="map-container"
+        mapTypeId="roadmap"
+      >
+        <MarkerF position={center} key="Prueba" />
+      </GoogleMap>
+    </div>
   );
 };
 
