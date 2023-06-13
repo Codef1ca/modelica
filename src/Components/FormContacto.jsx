@@ -4,7 +4,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { json } from "react-router-dom";
 
-const FormContacto = ({estilo}) => {
+const FormContacto = ({ estilo }) => {
   const formData = {
     nombre: undefined,
     apellido: undefined,
@@ -14,15 +14,13 @@ const FormContacto = ({estilo}) => {
     asunto: undefined,
     mensaje: undefined,
   };
-  
-  let estiloForm;
-  if (estilo == "blanco") {
-    estiloForm = "containerContactFormBlanco";
-  } 
-  else{
-    estiloForm = "containerContactFormNegro";
-  }
 
+  let addEstiloForm;
+  if (estilo == "blanco") {
+    addEstiloForm = "_blanco";
+  } else {
+    addEstiloForm = "_negro";
+  }
 
   const [formValue, setFormValue] = useState(formData);
 
@@ -85,15 +83,13 @@ const FormContacto = ({estilo}) => {
   // };
 
   return (
-    <div class={estiloForm}>
-      {/* <div>{JSON.stringify(formValue)}</div> */}
-
+    <div class={"containerContactForm" + addEstiloForm}>
       <div class="contentContactForm">
         <div class="left-content">
-          <div className="h1Form">
+          <div className={"h1Form" + addEstiloForm}>
             <h1>Pedí tu presupuesto</h1>
           </div>
-          <div className="cuerpoForm">
+          <div className={"cuerpoForm" + addEstiloForm}>
             <h2>
               Llena el formulario o llamanos para una consulta a domicilio.
             </h2>
@@ -116,7 +112,7 @@ const FormContacto = ({estilo}) => {
                   Nombre
                 </label>
                 <input
-                  className="inputForm"
+                  className={"inputForm" + addEstiloForm}
                   type="text"
                   id="nombre"
                   name="nombre"
@@ -128,7 +124,7 @@ const FormContacto = ({estilo}) => {
                   Apellido
                 </label>
                 <input
-                  className="inputForm"
+                  className={"inputForm" + addEstiloForm}
                   type="text"
                   id="apellido"
                   name="apellido"
@@ -141,7 +137,7 @@ const FormContacto = ({estilo}) => {
               Email
             </label>
             <input
-              className="inputForm"
+              className={"inputForm" + addEstiloForm}
               type="email"
               id="email"
               name="email"
@@ -152,7 +148,7 @@ const FormContacto = ({estilo}) => {
               Teléfono
             </label>
             <input
-              className="inputForm"
+              className={"inputForm" + addEstiloForm}
               type="tel"
               id="telefono"
               name="telefono"
@@ -163,7 +159,7 @@ const FormContacto = ({estilo}) => {
               Dirección
             </label>
             <input
-              className="inputForm"
+              className={"inputForm" + addEstiloForm}
               type="text"
               id="direccion"
               name="direccion"
@@ -174,7 +170,7 @@ const FormContacto = ({estilo}) => {
               Asunto
             </label>
             <input
-              className="inputForm"
+              className={"inputForm" + addEstiloForm}
               type="text"
               id="asunto"
               name="asunto"
@@ -185,14 +181,17 @@ const FormContacto = ({estilo}) => {
               Escribe tu mensaje aquí...
             </label>
             <textarea
-              className="formTextArea"
+              className={"formTextArea" + addEstiloForm}
               id="mensaje"
               name="mensaje"
               rows="4"
               onChange={handleChange}
             ></textarea>
 
-            <button className="formButtonSubmit" type="submit">
+            <button
+              className={"formButtonSubmit" + addEstiloForm}
+              type="submit"
+            >
               Enviar
             </button>
           </form>
