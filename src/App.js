@@ -5,6 +5,7 @@ import Hero from "./Components/Hero";
 import Acercade from "./Routes/Acercade";
 import Home from "./Routes/Home";
 import Footer from "./Components/Footer";
+import Trabajos from "./Routes/Trabajos";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
       <Home />
       <Acercade />
       <Footer/>
+      <Trabajos/>
     </div>
   );
 }

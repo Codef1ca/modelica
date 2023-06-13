@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Acercade from "./Routes/Acercade";
 import Home from "./Routes/Home";
 import Servicios from "./Routes/Servicios";
+import Trabajos from "./Routes/Trabajos";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/servicios",
     element: <Servicios />,
+  },
+  {
+    path: "/trabajos",
+    element: <Trabajos/>,
   },
 ]);
 

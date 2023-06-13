@@ -1,4 +1,6 @@
 import React from 'react'
+import LinkWhatsApp from './LineasProductos/LinkWhatsApp'
+import Footer from './Footer'
 
 const Acercatext = () => {
   return (
@@ -32,7 +34,8 @@ const Acercatext = () => {
       Según los expertos, la perfilería de aluminio ha sido ampliamente utilizada en ventanas, puertas y fachadas debido a su ligereza, diseño versátil, bajo costo de mantenimiento y excelente resistencia a la corrosión. El aluminio brinda una imagen de alta tecnología, con acabados de pintura y anodizado de alta calidad, y es fácil de ensamblar y fabricar. Además del aluminio, también se emplean carpinterías de PVC en modelos más modernos, y aún se utilizan carpinterías de madera en casos particulares.
       Para elegir el tipo de carpintería adecuado, la ubicación, características geográficas y altura del edificio son fundamentales. Estos factores determinan la presión del viento que actúa sobre la estructura, lo cual es crucial para dimensionar los perfiles y elegir el sistema más conveniente.</p>
       </div>
-    
+    <LinkWhatsApp/>
+    <Footer/>
     
     </div> 
  
