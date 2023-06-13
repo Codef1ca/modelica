@@ -7,6 +7,7 @@ import Acercade from "./Routes/Acercade";
 import Home from "./Routes/Home";
 import Servicios from "./Routes/Servicios";
 import Trabajos from "./Routes/Trabajos";
+import Contacto from "./Routes/Contacto";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
   {
     path: "/trabajos",
     element: <Trabajos/>,
+    path: "/contacto",
+    element: <Contacto />,
   },
 ]);
 

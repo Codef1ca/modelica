@@ -285,7 +285,6 @@ grid-template-columns: 1fr 1fr;
 
 /* tarjeta */
 .divTarjeta{
-  
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -869,6 +868,8 @@ background-color: #9a9a9a;
     width: 300px;
   }
 
+  
+
   .tituloLinkWPP{
     font-size: 20px;
   }
@@ -1008,8 +1009,9 @@ background-color: #9a9a9a;
 
 
 
+/* Componentes Nacho */
 
-/* CSS Componentes Nacho */
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -1057,14 +1059,14 @@ background-color: #9a9a9a;
 
 /* --------------- Formcontacto --------------- */
 
-.containerForm {
+.containerContactForm {
   background-color: #1e1e1e;
   color: white;
   padding: 20px;
   /* font-family: "ExtraLight", sans-serif; */
 }
 
-.content {
+.contentContactForm {
   display: flex;
   justify-content: space-between;
 }
@@ -1134,6 +1136,9 @@ form button {
   background-color: transparent;
   color: white; /* Cambiamos el color del texto a blanco */
   caret-color: gray; 
+  font-size: medium;
+  padding-left: 15px;
+  padding-bottom: 5px;
 }
 
 .inputForm:hover {
@@ -1143,6 +1148,10 @@ form button {
 .inputForm:focus {
   border-bottom: 2px solid #ff4040;
 }
+
+/* .inputForm {
+  
+} */
 
 /* siguiente paso: editar la fuente del form. Ver que sea la misma de la izq y capaz hacerlo una sola vez. */
 .formLabels{
@@ -1178,10 +1187,23 @@ form button {
   font-family: "poppins-extralight", "poppins", sans-serif;
 }
 
-/* input {
-  font-size: large;
-  padding-left: 15px;
-  padding-bottom: 5px;
-} */
 
-/* ACOMODA LA CLASE DEL INPUT PAJERO ASI NO MARCAS TODOS GRACIAS - @nacho*/  /**/
+/* Cierre Componentes Nacho */
+
+/* Sanmi Mapa */
+.map-container{
+  width: 70%;
+  height: 80vh;
+  margin: 0;
+}
+
+.contactoPage{
+  margin-top: 100px;
+}
+
+.divMapa{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

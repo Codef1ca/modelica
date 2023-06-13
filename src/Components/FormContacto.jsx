@@ -2,25 +2,18 @@ import "./../App.css";
 import { useState } from "react";
 
 const FormContacto = () => {
-
-  const keys = {nombre: "", asjdlads: ""}
-  const [Nombre, setNombre] = useState(keys)
-  const updateInput = (event)  => {
-    
-    setNombre(event.target.value)
-    console.log(event.target.value)
-    return 1
-  } 
-
-  const cambiarNombre = (event)  => {
-    setNombre(event.target.value)
-    console.log(event.target.value)
-    return 1
-  } 
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [asunto, setAsunto] = useState("");
+  const [mensaje, setMensaje] = useState("");
+  
   
   return (
-    <div class="containerForm">
-      <div class="content">
+    <div class="containerContactForm">
+      <div class="contentContactForm">
         <div class="left-content">
           <div className="h1Form">
             <h1>Pedí tu presupuesto</h1>
@@ -52,8 +45,8 @@ const FormContacto = () => {
                   type="text"
                   id="nombre"
                   name="nombre"
-                  value={Nombre}
-                  onChange={cambiarNombre}
+                  // value={Nombre}
+                  // onChange={cambiarNombre}
                 />
               </div>
               <div class="form-group">
