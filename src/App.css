@@ -1096,7 +1096,7 @@ form button {
 
 .formButtonSubmit_negro {
   background-color: white;
-  color: #9a9a9a;
+  color: #4f4f4f;
   width: 100%;
   height: 40px;
   text-align: center;
@@ -1105,20 +1105,12 @@ form button {
 
 /* Cierra Form Contacto Negro */
 
-/* Form Contacto Blanco  acá lo que tengo que hacer es acomodar los estilos del html para que cuando le pase blanco tome estos. Edité h1Form cuerpoForm inputForm formTextArea y formButtonSubmit  */
-/* lo que pasa acá es que estoy pisando los del form negro con los del blanco. editando el html para que tome los que cambie solo cuando le diga tienen que andar los dos */
-/* h1Form_blanco */
-  /* cuerpoForm_blanco */
-  /* inputForm_blanco */
-  /* formTextArea_blanco */
-  /* y */
-  /* formButtonSubmit_blanco */
+/* /* Form Contacto Blanco   */
 
   .containerContactForm_blanco {
   background-color: white;
   color: #1e1e1e;
   padding: 20px;
-  /* font-family: "ExtraLight", sans-serif; */
 }
 
 .h1Form_blanco {
@@ -1137,7 +1129,7 @@ form button {
 
 .formButtonSubmit_blanco {
   background-color: #1f1f1e;
-  color: #9a9a9a;
+  color: #dbdbdb;
   width: 100%;
   height: 40px;
   text-align: center;
@@ -1168,8 +1160,6 @@ form button {
   padding-bottom: 5px;
 }
 
-
-/*  */
 form button {
   background-color: blue;
   color: white;
@@ -1178,12 +1168,11 @@ form button {
   cursor: pointer;
 }
 
-
-.inputForm:hover {
-  border-bottom: 2px solid white;
+.inputForm_blanco:hover {
+  border-bottom: 2px solid black;
 }
 
-.inputForm:focus {
+.inputForm_blanco:focus {
   border-bottom: 2px solid #ff4040;
 }
 
@@ -1192,15 +1181,51 @@ form button {
 }
 
 
-.formTextArea:hover {
-  border-bottom: 2px solid white; /* Línea inferior blanca al pasar el mouse */
+.formTextArea_blanco:hover {
+  border-bottom: 2px solid black; /* Línea inferior blanca al pasar el mouse */
 }
 
-.formTextArea:focus {
+.formTextArea_blanco:focus {
   border-bottom: 2px solid #ff4040; /* Línea inferior roja al enfocar */
 }
 
 
 /* Cierra Form Contacto Blanco */
 
+/* Inicia Media queries */
+@media (max-width: 550px) {
+  .contentContactForm {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-content {
+    order: 0;
+    padding-left: 0;
+  }
+  
+  .right-content {
+    order: 1;
+    padding-right: 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  form label,
+  form input,
+  form textarea {
+    width: 100%;
+  }
+  
+  form button {
+    width: auto;
+  }
+}
+/* Terminan media queries nacho  */
 /* Cierre Componentes Nacho */
