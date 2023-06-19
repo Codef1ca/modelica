@@ -21,7 +21,8 @@ const Home = () => {
         <ButtonFixedWpp />
         <Benefits/>
         <Lineas/>
-        <FormContacto/>
+        <FormContacto estilo={"blanco"}/>
+        <FormContacto estilo={"negro"}/>
         <Testimonios/>
         <Footer/>
     </div>

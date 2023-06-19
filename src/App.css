@@ -933,7 +933,8 @@ padding: 0;
 
 /* Componentes Nacho */
 
-.container {
+/* Empiezan Estilos footer */
+.containerFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -976,10 +977,11 @@ padding: 0;
   color: #9a9a9a;
   text-decoration: none;
 }
+/* Terminan Estilos footer */
 
 /* --------------- Formcontacto --------------- */
-
-.containerContactForm {
+/* Form Contacto Negro */
+.containerContactForm_negro {
   background-color: #1e1e1e;
   color: white;
   padding: 20px;
@@ -1002,14 +1004,14 @@ padding: 0;
   padding-right: 50px; /* Ajusta el valor según tu preferencia */
 }
 
-.h1Form {
+.h1Form_negro {
   font-family: "poppins-semibold", "poppins", sans-serif;
   color: #f5f5f5;
   background: transparent;
   letter-spacing: normal;
 }
 
-.cuerpoForm {
+.cuerpoForm_negro {
   font-family: "poppins-extralight", "poppins", sans-serif;
   color: #c7c7c7;
   line-height: 1.88em;
@@ -1048,7 +1050,7 @@ form button {
   cursor: pointer;
 }
 
-.inputForm {
+.inputForm_negro {
   border: none;
   border-bottom: 2px solid #f5f5f57d;
   outline: none;
@@ -1060,24 +1062,19 @@ form button {
   padding-bottom: 5px;
 }
 
-.inputForm:hover {
+.inputForm_negro:hover {
   border-bottom: 2px solid white;
 }
 
-.inputForm:focus {
+.inputForm_negro:focus {
   border-bottom: 2px solid #ff4040;
 }
 
-/* .inputForm {
-  
-} */
-
-/* siguiente paso: editar la fuente del form. Ver que sea la misma de la izq y capaz hacerlo una sola vez. */
 .formLabels {
   font-family: "poppins-extralight", "poppins", sans-serif;
 }
 
-.formTextArea {
+.formTextArea_negro {
   border: none;
   border-bottom: 2px solid #f5f5f57d;
   outline: none;
@@ -1089,23 +1086,148 @@ form button {
   font-family: "Poppins", sans-serif; /* Cambia "Poppins" por la fuente que desees utilizar */
 }
 
-.formTextArea:hover {
+.formTextArea_negro:hover {
   border-bottom: 2px solid white; /* Línea inferior blanca al pasar el mouse */
 }
 
-.formTextArea:focus {
+.formTextArea_negro:focus {
   border-bottom: 2px solid #ff4040; /* Línea inferior roja al enfocar */
 }
 
-.formButtonSubmit {
+.formButtonSubmit_negro {
   background-color: white;
-  color: #9a9a9a;
+  color: #4f4f4f;
   width: 100%;
   height: 40px;
   text-align: center;
   font-family: "poppins-extralight", "poppins", sans-serif;
 }
 
+/* Cierra Form Contacto Negro */
+
+/* /* Form Contacto Blanco   */
+
+.containerContactForm_blanco {
+  background-color: white;
+  color: #1e1e1e;
+  padding: 20px;
+}
+
+.h1Form_blanco {
+  font-family: "poppins-semibold", "poppins", sans-serif;
+  color: #000000;
+  background: transparent;
+  letter-spacing: normal;
+}
+
+.cuerpoForm_blanco {
+  font-family: "poppins-extralight", "poppins", sans-serif;
+  color: #1e1e1e;
+  line-height: 1.88em;
+  font-size: 15px;
+}
+
+.formButtonSubmit_blanco {
+  background-color: #1f1f1e;
+  color: #dbdbdb;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-family: "poppins-extralight", "poppins", sans-serif;
+}
+
+.formTextArea_blanco {
+  border: none;
+  border-bottom: 2px solid #0000007d;
+  outline: none;
+  background-color: transparent;
+  color: white; /* Color del texto en blanco */
+  caret-color: gray; /* Color del caret en gris */
+  resize: none; /* Deshabilita la redimensionabilidad del textarea */
+  height: 50px; /* Altura fija del textarea */
+  font-family: "Poppins", sans-serif; /* Cambia "Poppins" por la fuente que desees utilizar */
+}
+
+.inputForm_blanco {
+  border: none;
+  border-bottom: 2px solid #0000007d;
+  outline: none;
+  background-color: transparent;
+  color: #1e1e1e; /* Cambiamos el color del texto a blanco */
+  caret-color: rgb(74, 74, 74);
+  font-size: medium;
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+form button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.inputForm_blanco:hover {
+  border-bottom: 2px solid black;
+}
+
+.inputForm_blanco:focus {
+  border-bottom: 2px solid #ff4040;
+}
+
+.formLabels {
+  font-family: "poppins-extralight", "poppins", sans-serif;
+}
+
+
+.formTextArea_blanco:hover {
+  border-bottom: 2px solid black; /* Línea inferior blanca al pasar el mouse */
+}
+
+.formTextArea_blanco:focus {
+  border-bottom: 2px solid #ff4040; /* Línea inferior roja al enfocar */
+}
+
+
+/* Cierra Form Contacto Blanco */
+
+/* Inicia Media queries */
+@media (max-width: 550px) {
+  .contentContactForm {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-content {
+    order: 0;
+    padding-left: 0;
+  }
+  
+  .right-content {
+    order: 1;
+    padding-right: 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  form label,
+  form input,
+  form textarea {
+    width: 100%;
+  }
+  
+  form button {
+    width: auto;
+  }
+}
+/* Terminan media queries nacho  */
 /* Cierre Componentes Nacho */
 
 /* Sanmi Mapa */
