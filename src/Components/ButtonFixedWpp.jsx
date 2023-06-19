@@ -1,8 +1,12 @@
 import React from "react";
 
+const numero_telefono = "3874622095";
+const mensaje = "Hola! Quiero saber más sobre sus servicios.";
+
 const ButtonFixedWpp = () => {
   const handleClick = () => {
-    console.log("consolaa");
+    const url = `https://api.whatsapp.com/send?phone=${numero_telefono}&text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
   };
 
   return (
