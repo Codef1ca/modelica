@@ -3,7 +3,7 @@ import "./../App.css";
 
 const Footer = ({ linkPP, linkIG, linkFB, linkLI }) => {
   return (
-    <div className="container">
+    <div className="containerFooter">
       <span className="text-span">
         <a className="a-PP" href={linkPP}>
           Política de privacidad
