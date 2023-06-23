@@ -100,7 +100,7 @@ const FormContacto = ({ estilo }) => {
 
             <p>Alejandro Gallardo esq. Av. Juventud, 4400 - Salta, Argentina</p>
             <p>ventas@modelica.com.ar</p>
-            <p>+54 9 387 223-8908 /678</p>
+            <p>+54 9 387 223-8908</p>
           </div>
         </div>
 
