@@ -1228,7 +1228,7 @@ background-color: #9a9a9a;
   background-color: #f5f5f5;
   font-family: "ExtraLight", sans-serif;
   color: #9a9a9a;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .text-span {
@@ -1283,6 +1283,8 @@ background-color: #9a9a9a;
   width: 40%;
   justify-content: center;
   padding-left: 50px; /* Ajusta el valor según tu preferencia */
+
+
 }
 
 .right-content {
@@ -1302,6 +1304,7 @@ background-color: #9a9a9a;
   color: #c7c7c7;
   line-height: 1.88em;
   font-size: 15px;
+  line-height: 40px;
 }
 
 .form-row {
@@ -1411,6 +1414,7 @@ form button {
   color: #1e1e1e;
   line-height: 1.88em;
   font-size: 15px;
+  line-height: 40px;
 }
 
 .formButtonSubmit_blanco {
@@ -1488,11 +1492,14 @@ form button {
   .left-content {
     order: 0;
     padding-left: 0;
+    width: 80%;
+    padding-bottom: 35px;
   }
   
   .right-content {
     order: 1;
     padding-right: 0;
+    width: 80%;
   }
   
   .form-row {
@@ -1532,6 +1539,7 @@ form button {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 /* Componentes Nacho */

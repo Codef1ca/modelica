@@ -23,10 +23,12 @@ const router = createBrowserRouter([
     element: <Servicios />,
   },
   {
-    path: "/trabajos",
-    element: <Trabajos/>,
     path: "/contacto",
     element: <Contacto />,
+  },
+  {
+    path: "/trabajos",
+    element: <Trabajos />,
   },
 ]);
 
