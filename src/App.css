@@ -1590,7 +1590,13 @@ form button {
   animation: shake 30s ease-in-out infinite;
 }
 
-
+/* validaciones form */
+.error-message {
+  margin-left: 5px;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
 
 
 

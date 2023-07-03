@@ -6,23 +6,24 @@ import { json } from "react-router-dom";
 
 const FormContacto = ({ estilo }) => {
   const formData = {
-    nombre: undefined,
-    apellido: undefined,
-    email: undefined,
-    telefono: undefined,
-    direccion: undefined,
-    asunto: undefined,
-    mensaje: undefined,
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    direccion: "",
+    asunto: "",
+    mensaje: "",
   };
 
   let addEstiloForm;
-  if (estilo == "blanco") {
+  if (estilo === "blanco") {
     addEstiloForm = "_blanco";
   } else {
     addEstiloForm = "_negro";
   }
 
   const [formValue, setFormValue] = useState(formData);
+  const [formErrors, setFormErrors] = useState({});
 
   function handleChange(event) {
     const input = event.target;
@@ -32,60 +33,60 @@ const FormContacto = ({ estilo }) => {
     setFormValue(prevFormData);
   }
 
-  //EmailJS:
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
+  function validateForm() {
+    const telefonoPattern = /^[0-9+#-]*$/;
+    const errors = {};
 
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE,
-        process.env.REACT_APP_EMAILJS_TEMPLATE,
-        form.current,
-        process.env.REACT_APP_EMAILJS_PUBLICKEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // Restablecer los valores de los inputs a ""
-          const formInputs = form.current.elements;
-          for (let i = 0; i < formInputs.length; i++) {
-            if (
-              formInputs[i].nodeName === "INPUT" ||
-              formInputs[i].nodeName === "TEXTAREA"
-            ) {
-              formInputs[i].value = "";
+    if (!formValue.telefono.match(telefonoPattern)) {
+      errors.telefono = "El teléfono solo puede contener números y símbolos especiales";
+    }
+
+    return errors;
+  }
+
+  function sendEmail(event) {
+    event.preventDefault();
+
+    const errors = validateForm();
+
+    if (Object.keys(errors).length === 0) {
+      emailjs
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE,
+          process.env.REACT_APP_EMAILJS_TEMPLATE,
+          event.target,
+          process.env.REACT_APP_EMAILJS_PUBLICKEY
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            // Restablecer los valores de los inputs a ""
+            const formInputs = event.target.elements;
+            for (let i = 0; i < formInputs.length; i++) {
+              if (
+                formInputs[i].nodeName === "INPUT" ||
+                formInputs[i].nodeName === "TEXTAREA"
+              ) {
+                formInputs[i].value = "";
+              }
             }
+          },
+          (error) => {
+            console.log(error.text);
           }
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    //restablecemos a "" ek los inputs
-    setFormValue(formData);
-  };
+        );
 
-  // Aux: El siguiente código lo deja en un JSON
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // Crear un objeto para almacenar los datos capturados
-  //   const formData = {
-  //     nombre,
-  //     apellido,
-  //     email,
-  //     telefono,
-  //     direccion,
-  //     asunto,
-  //     mensaje,
-  //   };
-  //   console.log("Datos capturados:", formData);
-  // };
+      setFormValue(formData);
+    } else {
+      console.log(errors);
+      setFormErrors(errors);
+    }
+  }
 
   return (
-    <div class={"containerContactForm" + addEstiloForm}>
-      <div class="contentContactForm">
-        <div class="left-content">
+    <div className={"containerContactForm" + addEstiloForm}>
+      <div className="contentContactForm">
+        <div className="left-content">
           <div className={"h1Form" + addEstiloForm}>
             <h1>Pedí tu presupuesto</h1>
           </div>
@@ -97,18 +98,17 @@ const FormContacto = ({ estilo }) => {
               <strong>Zonas de Servicio:</strong>
             </p>
             <p>Salta, Argentina.</p>
-
             <p>Alejandro Gallardo esq. Av. Juventud, 4400 - Salta, Argentina</p>
             <p>ventas@modelica.com.ar</p>
             <p>+54 9 387 223-8908</p>
           </div>
         </div>
 
-        <div class="right-content">
-          <form ref={form} onSubmit={sendEmail}>
-            <div class="form-row">
-              <div class="form-group">
-                <label className="formLabels" for="nombre">
+        <div className="right-content">
+          <form onSubmit={sendEmail}>
+            <div className="form-row">
+              <div className="form-group">
+                <label className="formLabels" htmlFor="nombre">
                   Nombre
                 </label>
                 <input
@@ -117,10 +117,12 @@ const FormContacto = ({ estilo }) => {
                   id="nombre"
                   name="nombre"
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <div class="form-group">
-                <label className="formLabels" for="apellido">
+
+              <div className="form-group">
+                <label className="formLabels" htmlFor="apellido">
                   Apellido
                 </label>
                 <input
@@ -129,11 +131,12 @@ const FormContacto = ({ estilo }) => {
                   id="apellido"
                   name="apellido"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
 
-            <label className="formLabels" for="email">
+            <label className="formLabels" htmlFor="email">
               Email
             </label>
             <input
@@ -142,9 +145,10 @@ const FormContacto = ({ estilo }) => {
               id="email"
               name="email"
               onChange={handleChange}
+              required
             />
 
-            <label className="formLabels" for="telefono">
+            <label className="formLabels" htmlFor="telefono">
               Teléfono
             </label>
             <input
@@ -153,9 +157,14 @@ const FormContacto = ({ estilo }) => {
               id="telefono"
               name="telefono"
               onChange={handleChange}
+              pattern="[0-9+#-]*"
+              required
             />
+            {formErrors.telefono && (
+              <span className="error-message">{formErrors.telefono}</span>
+            )}
 
-            <label className="formLabels" for="direccion">
+            <label className="formLabels" htmlFor="direccion">
               Dirección
             </label>
             <input
@@ -166,7 +175,7 @@ const FormContacto = ({ estilo }) => {
               onChange={handleChange}
             />
 
-            <label className="formLabels" for="asunto">
+            <label className="formLabels" htmlFor="asunto">
               Asunto
             </label>
             <input
@@ -177,7 +186,7 @@ const FormContacto = ({ estilo }) => {
               onChange={handleChange}
             />
 
-            <label className="formLabels" for="mensaje">
+            <label className="formLabels" htmlFor="mensaje">
               Escribe tu mensaje aquí...
             </label>
             <textarea
