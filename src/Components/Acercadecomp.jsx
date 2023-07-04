@@ -6,7 +6,7 @@ const Acercatext = () => {
   return (
     <div className="container-acerca">
       <div className="cont-txt-acerca">
-        <h1 style={{ textAlign: "center" }}>Acerca de Modélica Aberturas</h1>
+        <h1 className="tituloAcercaDe">Acerca de Modélica Aberturas</h1>
         <p className="parrafo-acerca">
           En Modélica nos especializamos en la fabricación, diseño e instalación
           de carpintería de aluminio de primera calidad. Nuestra empresa, con
@@ -20,7 +20,7 @@ const Acercatext = () => {
       </div>
       <div className="cont-img-acerca"></div>
       <div className="cont-txt-acerca">
-        <h1>Nuestro proceso</h1>
+        <h1 className="tituloAcercaDe">Nuestro proceso</h1>
         <p className="parrafo-acerca">
           En Modélica, no solo encontrarás un proveedor de carpintería de
           aluminio de alta calidad, sino también un aliado en la realización de
@@ -66,7 +66,7 @@ const Acercatext = () => {
         <div className="caja8"></div>
       </div>
       <div className="cont-txt-acerca">
-        <h1>Garantía de calidad</h1>
+        <h1 className="tituloAcercaDe">Garantía de calidad</h1>
         <p className="parrafo-acerca">
           En el contexto de la selección de ventanas y puertas para casas y
           edificios, la calidad de los productos es un factor clave a tener en
