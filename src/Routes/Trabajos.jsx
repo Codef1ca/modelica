@@ -1,14 +1,18 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import Trabajoscomp from '../Components/Trabajoscomp'
+import React, { useEffect } from "react";
+import Navbar from "../Components/Navbar";
+import Trabajoscomp from "../Components/Trabajoscomp";
 
 const Trabajos = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
-        <Navbar/>
-        <Trabajoscomp/>
+      <Navbar />
+      <Trabajoscomp />
     </div>
-  )
-}
+  );
+};
 
-export default Trabajos
+export default Trabajos;

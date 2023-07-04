@@ -167,7 +167,7 @@ padding: 0;
   background-image: url(./Assets/laura-cleffmann-z3drmcczVTc-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
   margin-bottom: 80px;
 }
@@ -190,6 +190,7 @@ padding: 0;
   text-align: center;
   font-weight: 350;
   color: var(--color-secundario);
+  
 }
 
 .caja2,
@@ -235,6 +236,7 @@ padding: 0;
 
 .grid-fotos {
   display: grid;
+  /* flex-wrap: wrap; */
   grid-template-columns: 3fr 3fr 3fr 3fr;
   width: 100%;
   min-height: 600px;
@@ -258,6 +260,9 @@ padding: 0;
   .navbar-links-container a {
     margin-right: 1rem;
     font-size: 1rem;
+  }
+  .parrafo-acerca{
+    padding: 40px 5% 70px 5%;
   }
 }
 
@@ -356,6 +361,11 @@ padding: 0;
   .btn-hero-two {
     margin-top: 30px;
   }
+
+  .grid-fotos{
+    grid-template-columns: 6fr 6fr;
+  }
+
 }
 @media (max-width: 650px) {
   .text-home {
@@ -418,6 +428,9 @@ padding: 0;
   }
   .cont-text-two .parrafo {
     font-size: 15px;
+  }
+  .grid-fotos{
+    grid-template-columns: 12fr
   }
 }
 @media (max-width: 350px) {
@@ -927,7 +940,7 @@ background-color: #9a9a9a;
 @media screen and (max-width: 912px) {
   .cont-text-two{
     margin-top: 80px; 
-    min-height: 1000px;
+    min-height: 0px;
   }
   .cont-img-two{
     height: 500px;
