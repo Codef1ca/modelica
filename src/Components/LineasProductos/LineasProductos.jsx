@@ -15,14 +15,14 @@ import Vidrios2 from "../../Assets/vidrios2.png";
 import Vidrios3 from "../../Assets/vidrios3.png";
 
 const urlsPremium = [
-  [premium1, "HA 62"],
-  [premium2, "HA 62 Alzante"],
-  [premium3, "H110"],
+  [premium1, "HA 110"],
+  [premium2, "HA 62"],
+  [premium3, "Nordical"],
 ];
 const urlsIntermedia = [
-  [intermedia1, "Nordical"],
-  [intermedia2, "Rotonda 640"],
-  [intermedia3, "Rotonda 640 RPT"],
+  [intermedia1, "Rotonda 640"],
+  [intermedia2, "Modena"],
+  [intermedia3, "L2200"],
 ];
 const urlsVidrios = [[Vidrios1], [Vidrios2], [Vidrios3]];
 
@@ -35,15 +35,15 @@ const LineasProductos = () => {
       <div>
         <LineaProductos
           subTitulo="Línea Premium"
-          urlImagenes={urlsIntermedia}
+          urlImagenes={urlsPremium}
         />
         <LineaProductos
           subTitulo="Línea Intermedia"
-          urlImagenes={urlsPremium}
+          urlImagenes={urlsIntermedia}
         />
 
         <LineaProductos
-          subTitulo="Línea Vidrios Vasa"
+          subTitulo="Línea Vidrios"
           urlImagenes={urlsVidrios}
         />
       </div>
