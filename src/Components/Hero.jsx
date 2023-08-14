@@ -4,25 +4,12 @@ const numero_telefono = "5493872238908";
 const mensaje = "Hola! Quiero saber más sobre sus servicios.";
 
 const Hero = () => {
-<<<<<<< HEAD
-    return (
-        <div className="container-hero">
-        <div className='container-img'> 
-            <div className="container-text">
-           <div className='text-home'> <h1>Somos fabricantes de aberturas en Salta</h1></div> 
-                <div class="btn-hero">
-                    <spam>Presupuesto sin costo.</spam>
-                    </div>
-                </div> 
-                </div>  
-=======
   const handleClick = () => {
     const url = `https://api.whatsapp.com/send?phone=${numero_telefono}&text=${encodeURIComponent(
       mensaje
     )}`;
     window.open(url, "_blank");
   };
->>>>>>> f75a71d3c65c16c53ae24c127643cb02d851967b
 
   return (
     <div className="container-hero">
@@ -33,7 +20,7 @@ const Hero = () => {
             <h1>Somos fabricantes de aberturas en Salta</h1>
           </div>
           <div class="btn-hero" onClick={handleClick}>
-            <spam>Presupuesto sin costo</spam>
+            <spam>Presupuesto sin costo.</spam>
           </div>
         </div>
       </div>
