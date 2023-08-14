@@ -1,18 +1,23 @@
 import React from "react";
 import "./../App.css";
 
-const Footer = ({ linkPP, linkIG, linkFB, linkLI }) => {
+const Footer = () => {
+  const linkPP = "";
+  const linkIG = "https://www.instagram.com/modelicaaberturas/";
+  const linkFB = "https://www.facebook.com/modelicaaberturas";
+  const linkLI = "https://www.linkedin.com/company/mod%C3%A9licaaberturas/";
+
   return (
-    <div className="container">
+    <div className="containerFooter">
       <span className="text-span">
-        <a className="a-PP" href={linkPP}>
+        <a className="a-PP" href={linkPP} target="_blank">
           Política de privacidad
         </a>
         <p>© 2023 Creado por Codefica - Todos los derechos reservados.</p>
       </span>
 
       <span className="social-span">
-        <a href={linkLI}>
+        <a href={linkLI} target="_blank">
           <svg
             className="svg-item"
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +27,7 @@ const Footer = ({ linkPP, linkIG, linkFB, linkLI }) => {
           </svg>
         </a>
 
-        <a href={linkIG}>
+        <a href={linkIG} target="_blank">
           <svg
             className="svg-item"
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +37,7 @@ const Footer = ({ linkPP, linkIG, linkFB, linkLI }) => {
           </svg>
         </a>
 
-        <a href={linkFB}>
+        <a href={linkFB} target="_blank">
           <svg
             className="svg-item"
             xmlns="http://www.w3.org/2000/svg"
