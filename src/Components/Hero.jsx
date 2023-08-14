@@ -7,7 +7,7 @@ const Hero = () => {
             <div className="container-text">
            <div className='text-home'> <h1>Somos fabricantes de aberturas en Salta</h1></div> 
                 <div class="btn-hero">
-                    <spam>Presupuesto sin costo</spam>
+                    <spam>Presupuesto sin costo.</spam>
                     </div>
                 </div> 
                 </div>  

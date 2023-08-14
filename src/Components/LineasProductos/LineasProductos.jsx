@@ -14,8 +14,8 @@ import Vidrios1 from "../../Assets/vidrios1.png"
 import Vidrios2 from "../../Assets/vidrios2.png"
 import Vidrios3 from "../../Assets/vidrios3.png"
 
-const urlsPremium = [[premium1,"HA 62"], [premium2,"HA 62 Alzante" ], [premium3, "H110"]];
-const urlsIntermedia = [[intermedia1,"Nordical"], [intermedia2,"Rotonda 640" ], [intermedia3, "Rotonda 640 RPT"]];
+const urlsPremium = [[premium1,"HA 110"], [premium2,"HA 62" ], [premium3, "NORDICAL"]];
+const urlsIntermedia = [[intermedia1,"ROTONDA 640"], [intermedia2,"MODENA" ], [intermedia3, "L2200"]];
 const urlsVidrios = [[Vidrios1,"Vidrios1"], [Vidrios2,"Vidros2" ], [Vidrios3, "Vidros3"]];
 
 const LineasProductos = () => {
